@@ -1,19 +1,68 @@
 <!DOCTYPE html>
-<html>
-<head><title>Leetpush Setup</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Leetpush Setup</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f3f4f6;
+      padding: 20px;
+      width: 320px;
+      box-sizing: border-box;
+    }
+    h2 {
+      color: #4f46e5;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    label {
+      font-size: 14px;
+      display: block;
+      margin-top: 10px;
+      color: #333;
+    }
+    button {
+      width: 100%;
+      background: #4f46e5;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #4338ca;
+    }
+  </style>
+</head>
 <body>
-  <h2>Setup GitHub Config</h2>
-  <input id="token" placeholder="GitHub Token" /><br />
-  <input id="username" placeholder="GitHub Username" /><br />
-  <input id="repo" placeholder="Repository Name" /><br />
-  <label>Default Extension:
-    <select id="defaultExt">
-      <option value=".py">Python</option>
-      <option value=".java">Java</option>
-      <option value=".cpp">C++</option>
-    </select>
-  </label><br />
-  <button id="save">Save</button>
+  <h2>🚀 Leetpush Setup</h2>
+
+  <input id="token" placeholder="GitHub Token" />
+  <input id="username" placeholder="GitHub Username" />
+  <input id="repo" placeholder="Repository Name" />
+
+  <label for="defaultExt">Default Extension</label>
+  <select id="defaultExt">
+    <option value=".py">Python (.py)</option>
+    <option value=".java">Java (.java)</option>
+    <option value=".cpp">C++ (.cpp)</option>
+  </select>
+
+  <button id="save">💾 Save Configuration</button>
 
   <script src="setup.js"></script>
 </body>

@@ -1,19 +1,86 @@
 <!DOCTYPE html>
-<html>
-<head><title>Leetpush</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Leetpush</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8fafc;
+      padding: 20px;
+      width: 350px;
+      box-sizing: border-box;
+    }
+    h2 {
+      text-align: center;
+      color: #1e3a8a;
+      margin-bottom: 16px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+    #code {
+      width: 100%;
+      height: 200px;
+      font-family: 'Courier New', monospace;
+      background: #0f172a;
+      color: #f1f5f9;
+      border: 1px solid #334155;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 14px;
+      border-radius: 6px;
+      resize: vertical;
+    }
+    label {
+      font-size: 14px;
+      display: block;
+      margin-top: 10px;
+      color: #111827;
+    }
+    #setDefault {
+      margin-right: 5px;
+    }
+    button {
+      width: 100%;
+      background: #1d4ed8;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #2563eb;
+    }
+  </style>
+</head>
 <body>
-  <h2>Push LeetCode Code</h2>
-  <input id="commitMsg" placeholder="Commit message" /><br />
-  <textarea id="code" placeholder="Paste code here" rows="10" cols="30"></textarea><br />
-  <label>Extension:
-    <select id="fileType">
-      <option value=".py">Python</option>
-      <option value=".java">Java</option>
-      <option value=".cpp">C++</option>
-    </select>
-  </label><br />
-  <label><input type="checkbox" id="setDefault" /> Set as default</label><br />
-  <button id="push">Push</button>
+  <h2>📤 Push to Leetpush</h2>
+
+  <input id="commitMsg" placeholder="Enter commit message..." />
+
+  <textarea id="code" placeholder="Paste your code here..."></textarea>
+
+  <label for="fileType">File Extension</label>
+  <select id="fileType">
+    <option value=".py">Python (.py)</option>
+    <option value=".java">Java (.java)</option>
+    <option value=".cpp">C++ (.cpp)</option>
+  </select>
+
+  <label><input type="checkbox" id="setDefault" /> Set as default</label>
+
+  <button id="push">🚀 Push to GitHub</button>
 
   <script src="popup.js"></script>
 </body>
