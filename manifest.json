@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Leetpush",
+  "version": "1.0",
+  "description": "Push your LeetCode solutions directly to GitHub",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["https://api.github.com/"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "github.js"
+  }
+}
