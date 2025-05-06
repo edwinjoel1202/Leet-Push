@@ -10,7 +10,7 @@
       padding: 20px;
       width: 350px;
       box-sizing: border-box;
-      margin: 0; /* Reset default body margin */
+      margin: 0;
     }
     h2 {
       text-align: center;
@@ -24,21 +24,15 @@
       font-size: 14px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      box-sizing: border-box; /* Ensure all elements include padding and border in width */
+      box-sizing: border-box;
     }
-    #code {
-      width: 100%;
+    textarea#code {
       height: 200px;
       font-family: 'Courier New', monospace;
       background: #0f172a;
       color: #f1f5f9;
       border: 1px solid #334155;
-      padding: 10px;
-      margin: 10px 0;
-      font-size: 14px;
-      border-radius: 6px;
       resize: vertical;
-      box-sizing: border-box; /* Explicitly ensure box-sizing */
     }
     label {
       font-size: 14px;
@@ -49,39 +43,18 @@
     .checkbox-container {
       display: flex;
       align-items: center;
+      gap: 8px;
       margin-top: 10px;
-      gap: 8px; /* Consistent spacing between checkbox and text */
     }
     .checkbox-container input[type="checkbox"] {
-      -webkit-appearance: none;
-      appearance: none; /* Remove default browser styling */
       width: 16px;
       height: 16px;
-      margin: 0; /* Remove default margin */
-      border: 2px solid #1d4ed8; /* Match button color */
+      border: 2px solid #1d4ed8;
       border-radius: 4px;
       background-color: #fff;
       cursor: pointer;
-      position: relative;
-      flex-shrink: 0; /* Prevent checkbox from shrinking */
     }
-    .checkbox-container input[type="checkbox"]:checked::after {
-      content: '✔';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #1d4ed8;
-      font-size: 12px;
-    }
-    .checkbox-container label {
-      font-size: 14px;
-      color: #111827;
-      line-height: 16px; /* Align vertically with checkbox */
-      margin: 0; /* Remove default label margin */
-      display: inline; /* Override the block display for this label */
-    }
-    button {
+    .btn {
       width: 100%;
       background: #1d4ed8;
       color: white;
@@ -92,10 +65,40 @@
       cursor: pointer;
       margin-top: 16px;
       transition: background 0.3s;
-      box-sizing: border-box; /* Ensure button width matches others */
+      position: relative;
     }
-    button:hover {
+    .btn:hover {
       background: #2563eb;
+    }
+    .spinner {
+      border: 3px solid #f3f3f3;
+      border-top: 3px solid white;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      animation: spin 1s linear infinite;
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @keyframes spin {
+      0% { transform: translateY(-50%) rotate(0deg); }
+      100% { transform: translateY(-50%) rotate(360deg); }
+    }
+    .settings {
+      margin-top: 16px;
+      text-align: center;
+    }
+    .settings button {
+      background: none;
+      color: #dc2626;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .settings button:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -103,7 +106,6 @@
   <h2>📤 Push to Leetpush</h2>
 
   <input id="commitMsg" placeholder="Enter commit message..." />
-
   <textarea id="code" placeholder="Paste your code here..."></textarea>
 
   <label for="fileType">File Extension</label>
@@ -118,7 +120,14 @@
     <label for="setDefault">Set as default</label>
   </div>
 
-  <button id="push">🚀 Push to GitHub</button>
+  <button class="btn" id="push">
+    🚀 Push to GitHub
+    <div id="spinner" class="spinner" style="display: none;"></div>
+  </button>
+
+  <div class="settings">
+    <button id="clearConfig">🗑️ Clear Configuration</button>
+  </div>
 
   <script src="popup.js"></script>
 </body>
