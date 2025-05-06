@@ -10,20 +10,21 @@
       padding: 20px;
       width: 350px;
       box-sizing: border-box;
+      margin: 0; /* Reset default body margin */
     }
     h2 {
       text-align: center;
       color: #1e3a8a;
       margin-bottom: 16px;
     }
-    input, select {
+    input, select, textarea {
       width: 100%;
       padding: 10px;
       margin: 8px 0;
       font-size: 14px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      box-sizing: border-box;
+      box-sizing: border-box; /* Ensure all elements include padding and border in width */
     }
     #code {
       width: 100%;
@@ -37,15 +38,48 @@
       font-size: 14px;
       border-radius: 6px;
       resize: vertical;
+      box-sizing: border-box; /* Explicitly ensure box-sizing */
     }
     label {
       font-size: 14px;
+      color: #111827;
       display: block;
       margin-top: 10px;
-      color: #111827;
     }
-    #setDefault {
-      margin-right: 5px;
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      gap: 8px; /* Consistent spacing between checkbox and text */
+    }
+    .checkbox-container input[type="checkbox"] {
+      -webkit-appearance: none;
+      appearance: none; /* Remove default browser styling */
+      width: 16px;
+      height: 16px;
+      margin: 0; /* Remove default margin */
+      border: 2px solid #1d4ed8; /* Match button color */
+      border-radius: 4px;
+      background-color: #fff;
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0; /* Prevent checkbox from shrinking */
+    }
+    .checkbox-container input[type="checkbox"]:checked::after {
+      content: '✔';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #1d4ed8;
+      font-size: 12px;
+    }
+    .checkbox-container label {
+      font-size: 14px;
+      color: #111827;
+      line-height: 16px; /* Align vertically with checkbox */
+      margin: 0; /* Remove default label margin */
+      display: inline; /* Override the block display for this label */
     }
     button {
       width: 100%;
@@ -58,6 +92,7 @@
       cursor: pointer;
       margin-top: 16px;
       transition: background 0.3s;
+      box-sizing: border-box; /* Ensure button width matches others */
     }
     button:hover {
       background: #2563eb;
@@ -78,7 +113,10 @@
     <option value=".cpp">C++ (.cpp)</option>
   </select>
 
-  <label><input type="checkbox" id="setDefault" /> Set as default</label>
+  <div class="checkbox-container">
+    <input type="checkbox" id="setDefault" />
+    <label for="setDefault">Set as default</label>
+  </div>
 
   <button id="push">🚀 Push to GitHub</button>
 
