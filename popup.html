@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Leetpush</title>
@@ -12,12 +13,16 @@
       box-sizing: border-box;
       margin: 0;
     }
+
     h2 {
       text-align: center;
       color: #1e3a8a;
       margin-bottom: 16px;
     }
-    input, select, textarea {
+
+    input,
+    select,
+    textarea {
       width: 100%;
       padding: 10px;
       margin: 8px 0;
@@ -26,26 +31,32 @@
       border-radius: 6px;
       box-sizing: border-box;
     }
+
     textarea#code {
       height: 200px;
-      font-family: 'Courier New', monospace;
+      font-family: Consolas, monospace;
+      font-weight: bold;
+      font-size: 12px;
       background: #0f172a;
       color: #f1f5f9;
       border: 1px solid #334155;
       resize: vertical;
     }
+
     label {
       font-size: 14px;
       color: #111827;
       display: block;
       margin-top: 10px;
     }
+
     .checkbox-container {
       display: flex;
       align-items: center;
       gap: 8px;
       margin-top: 10px;
     }
+
     .checkbox-container input[type="checkbox"] {
       width: 16px;
       height: 16px;
@@ -54,6 +65,7 @@
       background-color: #fff;
       cursor: pointer;
     }
+
     .btn {
       width: 100%;
       background: #1d4ed8;
@@ -67,9 +79,11 @@
       transition: background 0.3s;
       position: relative;
     }
+
     .btn:hover {
       background: #2563eb;
     }
+
     .spinner {
       border: 3px solid #f3f3f3;
       border-top: 3px solid white;
@@ -82,14 +96,22 @@
       top: 50%;
       transform: translateY(-50%);
     }
+
     @keyframes spin {
-      0% { transform: translateY(-50%) rotate(0deg); }
-      100% { transform: translateY(-50%) rotate(360deg); }
+      0% {
+        transform: translateY(-50%) rotate(0deg);
+      }
+
+      100% {
+        transform: translateY(-50%) rotate(360deg);
+      }
     }
+
     .settings {
       margin-top: 16px;
       text-align: center;
     }
+
     .settings button {
       background: none;
       color: #dc2626;
@@ -97,11 +119,13 @@
       font-size: 14px;
       cursor: pointer;
     }
+
     .settings button:hover {
       text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
   <h2>📤 Push to Leetpush</h2>
 
@@ -131,4 +155,5 @@
 
   <script src="popup.js"></script>
 </body>
+
 </html>
